@@ -9,7 +9,7 @@ Receives data from ESP32 via HTTP.
 const char* ssid = getenv("WIFI_SSID");;  
 const char* password = getenv("WIFI_PASSWORD");
 
-// flask api end point
+// djanfo api end point
 const char* api_url = getenv("API_URL");
 
 
@@ -25,7 +25,7 @@ void setup(){
 }
 
 void loop(){
-    float humidity = random(30, 80);  //replace with real sensor code
+    float humidity = random(30, 80);  
     if (WiFi.status() == WL_CONNECTED) {
         // HTTP client object 
         HTTPClient http;
@@ -52,6 +52,6 @@ void loop(){
         http.end();
     }
 
-    delay(10000);  // Send data every 10 seconds
+    delay(14400000);  // Send data every 4 hours
 }
 
