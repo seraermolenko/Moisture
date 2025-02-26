@@ -3,7 +3,7 @@
 #include <ArduinoJson.h>
 
 // Sends JSON data to a Python API, which will forward it to Kafka.
-Receives data from ESP32 via HTTP.
+// Receives data from ESP32 via HTTP.
 // Publishes it to Kafka
 
 const char* ssid = getenv("WIFI_SSID");;  
@@ -52,6 +52,7 @@ void loop(){
         http.end();
     }
 
-    delay(14400000);  // Send data every 4 hours
+    // delay(14400000);  // Send data every 4 hours
+    delay(1000)
 }
 
